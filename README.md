@@ -35,6 +35,12 @@ app.listen(port, () => {
 });
 ```
 
+### Usage 
+
+1. [Duck DB](https://duckdb.org/)
+2. [Server Sent Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)
+3. [PM2](https://pm2.keymetrics.io/docs/usage/quick-start/)
+
 ### Features
 
 - [x] Custom logs store and realtime response
