@@ -1,7 +1,5 @@
 # express-control-room
 
-# express-control-room
-
 [![npm version](https://badge.fury.io/js/express-control-room.svg)](https://www.npmjs.com/package/express-control-room)
 
 
