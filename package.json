@@ -1,7 +1,7 @@
 {
   "name": "express-control-room",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "Express Control Room is a middleware package for the Express.js framework designed to provide a centralized control interface for managing and monitoring various aspects of your Express application and the server. It offers features such as real-time logging, route management, and request/response inspection, server monitoring.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
