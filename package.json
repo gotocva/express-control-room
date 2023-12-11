@@ -1,13 +1,13 @@
 {
   "name": "express-control-room",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Express Control Room is a middleware package for the Express.js framework designed to provide a centralized control interface for managing and monitoring various aspects of your Express application and the server. It offers features such as real-time logging, route management, and request/response inspection, server monitoring.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/gotocva/spark-node-metrics",
-  "issues": "https://github.com/gotocva/spark-node-metrics/issues",
+  "homepage": "https://github.com/gotocva/express-control-room",
+  "issues": "https://github.com/gotocva/express-control-room/issues",
   "keywords": [
     "Monitoring",
     "Observability Tools",
@@ -21,7 +21,6 @@
   "license": "MIT",
   "dependencies": {
     "duckdb": "^0.9.2",
-    "event-loop-stats": "^1.4.1",
     "express": "^4.18.2",
     "express-basic-auth": "^1.2.1",
     "moment": "^2.29.4",

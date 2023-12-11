@@ -2,7 +2,6 @@ const { exec } = require('child_process');
 const os = require('os');
 const v8 = require('v8');
 const pidusage = require('pidusage');
-const eventLoopStats = require('event-loop-stats');
 
 // Get CPU information
 const cpus = os.cpus();
@@ -58,16 +57,6 @@ function getPidInformation(pid) {
             stat.load = os.loadavg();
             stat.timestamp = Date.now();
             stat.heap = v8.getHeapStatistics();
-        
-            if (eventLoopStats) {
-              stat.event_loop = eventLoopStats.sense();
-              stat.event_loop_meta = {
-                max: `Maximum number of milliseconds spent in a single loop since last sense call.`,
-                min: `Minimum number of milliseconds spent in a single loop since last sense call.`,
-                sum: `Total number of milliseconds spent in the loop since last sense call.`,
-                num: `Total number of loops since last sense call.`
-              }
-            }
             resolve(stat);
         });
     })

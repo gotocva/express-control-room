@@ -3,6 +3,7 @@
 const express = require('express');
 const utils = require('./utils');
 const { v4: uuidv4 } = require('uuid');
+const fs = require('fs');
 
 const { defaultLogStream } = require('./events/default-logs');
 const Log = require('./logs');
@@ -18,7 +19,7 @@ const textColor = {
 // Generate a v4 (random) UUID
 const uuid = uuidv4();
 
-const fs = require('fs');
+const listProcess = require('./pm2/list');
 
 fs.writeFile('token', uuid, (err) => {
   if (err) {
@@ -35,16 +36,19 @@ const ControlRoom = (req, res, next) => {
     const router = express.Router();
 
     // Define a route within the middleware
-    router.get('/spark-node-metrics/utils', async (req, res) => {
+    router.get('/control-room/utils', async (req, res) => {
         utils.process = await utils.getPidInformation(process.pid).catch(Log.error);
         res.status(200).json({status: true, message: 'System utils', data: utils});
     });
 
     // return token
-    router.get('/spark-node-metrics/token', token);
+    router.get('/control-room/token', token);
 
     // SSE stream default logs on realtime
-    router.get('/spark-node-metrics/logs/default/stream', defaultLogStream);
+    router.get('/control-room/logs/default/stream', defaultLogStream);
+
+    //
+    router.get('/control-room/pm2/list', listProcess);
 
     // Use the router for the defined route
     router(req, res, next);

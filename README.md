@@ -50,6 +50,16 @@ app.listen(port, () => {
 - [ ] Request logs store and realtime response
 - [ ] PM2 application management
 
+### API's and Stream's
+
+| Method | URL                                      | Comments                              |
+|--------|------------------------------------------|---------------------------------------|
+| GET    | /control-room/utils                      | Returns server details                |
+| GET    | /control-room/token                      | Returns auth token                    |
+| GET    | /control-room/logs/default/stream        | SSE stream default logs on realtime   |
+
+
+
 ### License
 
 MIT
